@@ -1,0 +1,87 @@
+# =========================
+# ROOT DEPENDENCIES
+# =========================
+node_modules/
+
+# =========================
+# FRONTEND
+# =========================
+Frontend/node_modules/
+Frontend/dist/
+Frontend/build/
+
+# =========================
+# BACKEND
+# =========================
+Backend/node_modules/
+Backend/dist/
+Backend/build/
+
+# Backend env
+Backend/.env
+Backend/.env.*
+!Backend/.env.example
+
+# Backend uploads
+Backend/uploads/
+
+# =========================
+# ENV FILES
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# LOGS
+# =========================
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# BUILD
+# =========================
+dist/
+build/
+
+# =========================
+# COVERAGE
+# =========================
+coverage/
+
+# =========================
+# VITE
+# =========================
+vite.svg
+
+# =========================
+# TYPESCRIPT
+# =========================
+*.tsbuildinfo
+
+# =========================
+# DATABASES / ORM
+# =========================
+prisma/dev.db
+
+# =========================
+# TEMP FILES
+# =========================
+tmp/
+temp/
+
+# =========================
+# OPERATING SYSTEM
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# IDEs
+# =========================
+.vscode/
+.idea/
