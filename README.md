@@ -21,7 +21,8 @@ npm run preview  # sirve dist/
 ```
 
 ## Despliegue en Netlify
+- La configuración está versionada en `netlify.toml` en la raíz del repositorio.
 - Base directory: `Frontend`
 - Build command: `npm run build`
-- Publish directory: `Frontend/dist`
+- Publish directory: `dist` (relativa a `Frontend`)
 - `public/_redirects` ya incluye la regla SPA para React Router.
