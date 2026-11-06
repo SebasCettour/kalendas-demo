@@ -58,19 +58,19 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-cyan-50 flex items-center justify-center px-4 py-6 sm:py-8">
+    <div className="flex min-h-[calc(100vh-3rem)] items-center justify-center bg-gradient-to-br from-slate-50 via-white to-cyan-50 px-4 py-4">
       <div
         className="
           relative
           w-full
-          max-w-md
+          max-w-sm
           overflow-hidden
-          rounded-2xl sm:rounded-3xl
+          rounded-2xl
           border
           border-slate-200/70
           bg-white/90
-          p-6 sm:p-8
-          shadow-xl
+          p-5 sm:p-6
+          shadow-lg
           shadow-slate-200/50
           backdrop-blur-xl
         "
@@ -81,17 +81,17 @@ export default function Login() {
 
         <div className="relative">
           {/* Logo / Marca */}
-          <div className="mb-6 sm:mb-8 text-center">
+          <div className="mb-5 sm:mb-6 text-center">
             <img
               src="/main_logo.png"
               alt="Logo de Kalendas"
-              className="mx-auto h-16 sm:h-24 md:h-28 w-auto object-contain"
+              className="mx-auto h-14 sm:h-16 md:h-20 w-auto object-contain"
             />
 
             <h1
               className="
-                mt-3 sm:mt-4
-                text-3xl sm:text-4xl
+                mt-2 sm:mt-3
+                text-2xl sm:text-3xl
                 font-bold
                 tracking-[0.04em]
                 text-[#0A6BB8]
@@ -103,7 +103,7 @@ export default function Login() {
 
             <p
               className="
-                mt-2
+                mt-1.5
                 text-[10px] sm:text-[11px]
                 uppercase
                 tracking-[0.20em]
@@ -114,26 +114,26 @@ export default function Login() {
               Agenda médica inteligente
             </p>
 
-            <p className="mt-4 sm:mt-5 text-sm text-slate-500">
+            <p className="mt-3 sm:mt-4 text-sm text-slate-500">
               Ingresá tus credenciales para acceder al sistema
             </p>
           </div>
 
           {/* Formulario */}
           <form
-            className="space-y-4 sm:space-y-5"
+            className="space-y-3"
             onSubmit={handleSubmit(onSubmit)}
             noValidate
           >
             <fieldset
               disabled={isLoading}
-              className="min-w-0 space-y-4 sm:space-y-5"
+              className="min-w-0 space-y-3"
             >
               {/* Usuario */}
               <div>
                 <label
                   htmlFor="usuario"
-                  className="mb-2 block text-sm font-medium text-slate-700"
+                  className="mb-1.5 block text-sm font-medium text-slate-700"
                 >
                   Usuario
                 </label>
@@ -153,11 +153,11 @@ export default function Login() {
                   }
                   className={`
                     w-full
-                    rounded-2xl
+                    rounded-xl
                     border
                     bg-slate-50/80
                     px-4
-                    py-3
+                    py-2.5
                     text-base
                     text-slate-800
                     placeholder:text-slate-400
@@ -193,7 +193,7 @@ export default function Login() {
 
               {/* Contraseña */}
               <div>
-                <div className="mb-2 flex items-center justify-between">
+                <div                 className="mb-1.5 flex items-center justify-between">
                   <label
                     htmlFor="password"
                     className="block text-sm font-medium text-slate-700"
@@ -222,13 +222,12 @@ export default function Login() {
                     }
                     className={`
                       w-full
-                      rounded-2xl
+                      rounded-xl
                       border
                       bg-slate-50/80
                       px-4
-                      py-3
+                      py-2.5
                       pr-12
-                      mb-5
                       text-base
                       text-slate-800
                       placeholder:text-slate-400
@@ -285,9 +284,9 @@ export default function Login() {
                   items-center
                   justify-center
                   gap-2
-                  rounded-2xl
+                  rounded-xl
                   bg-[#0A6BB8]
-                  py-3.5
+                  py-3
                   font-semibold
                   text-white
                   transition-all
@@ -311,7 +310,7 @@ export default function Login() {
                 type="button"
                 onClick={entrarComoDemo}
                 disabled={isLoading}
-                className="w-full rounded-2xl border border-[#0A6BB8] py-3.5 font-semibold text-[#0A6BB8] transition-all hover:bg-cyan-50 focus:outline-none focus-visible:ring-4 focus-visible:ring-cyan-200 disabled:cursor-not-allowed disabled:opacity-70"
+                className="w-full rounded-xl border border-[#0A6BB8] py-3 font-semibold text-[#0A6BB8] transition-all hover:bg-cyan-50 focus:outline-none focus-visible:ring-4 focus-visible:ring-cyan-200 disabled:cursor-not-allowed disabled:opacity-70"
               >
                 Entrar como demo
               </button>
@@ -322,7 +321,7 @@ export default function Login() {
             </fieldset>
 
             {/* Separador */}
-            <div className="relative py-2">
+            <div className="relative py-1">
               <div className="absolute inset-0 flex items-center">
                 <div className="w-full border-t border-slate-200" />
               </div>
@@ -334,36 +333,18 @@ export default function Login() {
 
             {/* Crear cuenta */}
             <div className="text-center">
-              <p className="text-sm text-slate-500">¿No tenés cuenta?</p>
+              <p className="text-sm text-slate-500">
+                ¿No tenés cuenta?{" "}
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  type="button"
+                  disabled={isLoading}
+                  className="font-semibold text-[#0A6BB8] transition-colors hover:text-[#095b9a] hover:underline focus:outline-none focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-cyan-300 disabled:cursor-not-allowed disabled:opacity-60"
+                >
+                  Crear cuenta
+                </button>
+              </p>
 
-              <button
-                onClick={() => setIsModalOpen(true)}
-                type="button"
-                disabled={isLoading}
-                className="
-                  mt-2
-                  w-full
-                  rounded-2xl
-                  border
-                  border-slate-200
-                  bg-white
-                  px-4
-                  py-3
-                  font-medium
-                  text-slate-700
-                  transition-all
-                  hover:border-cyan-200
-                  hover:bg-slate-50
-                  hover:text-[#0A6BB8]
-                  focus:outline-none
-                  focus-visible:ring-4
-                  focus-visible:ring-cyan-100
-                  disabled:cursor-not-allowed
-                  disabled:opacity-60
-                "
-              >
-                Crear cuenta
-              </button>
             </div>
           </form>
         </div>
