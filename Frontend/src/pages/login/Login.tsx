@@ -125,7 +125,10 @@ export default function Login() {
             onSubmit={handleSubmit(onSubmit)}
             noValidate
           >
-            <fieldset disabled={isLoading} className="contents">
+            <fieldset
+              disabled={isLoading}
+              className="min-w-0 space-y-4 sm:space-y-5"
+            >
               {/* Usuario */}
               <div>
                 <label
